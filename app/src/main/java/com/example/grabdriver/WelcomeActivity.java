@@ -6,34 +6,34 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
-import android.widget.EditText;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    private EditText editTextMobile;
+    private Button WelcomeDriverButton;
+    private Button WelcomeCustomButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        editTextMobile = findViewById(R.id.editTextMobile);
+        WelcomeCustomButton = (Button) findViewById(R.id.wellcome_customer_btn);
+        WelcomeDriverButton = (Button) findViewById(R.id.welcome_driver_btn);
 
-        findViewById(R.id.buttonContinue).setOnClickListener(new View.OnClickListener() {
+        WelcomeCustomButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                Intent  LoginRegisterCusTomerIntent = new Intent(WelcomeActivity.this, CustomerLoginActivity.class);
+                startActivity(LoginRegisterCusTomerIntent);
+            }
+        });
 
-                String mobile = editTextMobile.getText().toString().trim();
-
-                if(mobile.isEmpty() || mobile.length() < 10){
-                    editTextMobile.setError("Enter a valid mobile");
-                    editTextMobile.requestFocus();
-                    return;
-                }
-
-                Intent intent = new Intent(WelcomeActivity.this, VerifyPhoneActivity.class);
-                intent.putExtra("mobile", mobile);
-                startActivity(intent);
+        WelcomeDriverButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent  LoginRegisterDriverIntent = new Intent(WelcomeActivity.this, DriverLoginActivity.class);
+                startActivity(LoginRegisterDriverIntent);
             }
         });
     }
