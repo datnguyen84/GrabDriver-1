@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1049150586853",
+    "firebase_url": "https://grabdri.firebaseio.com",
+    "project_id": "grabdri",
+    "storage_bucket": "grabdri.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049150586853:android:0c50bbe260a0bfe2",
+        "android_client_info": {
+          "package_name": "com.example.grabdriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1049150586853-fion0k4lnjkif4tsdbhtgi7pgsnqbedu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.grabdriver",
+            "certificate_hash": "b5e03f4369746131cd605e370f2e05b70abab117"
+          }
+        },
+        {
+          "client_id": "1049150586853-jpll1ms339d1j63nq505s1vtj70ovk0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApVDLaVk6X6n2J8Uf9r-3ISK-g9keJF90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1049150586853-jpll1ms339d1j63nq505s1vtj70ovk0b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
