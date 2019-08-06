@@ -6,34 +6,34 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.EditText;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    private Button WelcomeDriverButton;
-    private Button WelcomeCustomButton;
-
+    private EditText editTextMobile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        WelcomeCustomButton = (Button) findViewById(R.id.wellcome_customer_btn);
-        WelcomeDriverButton = (Button) findViewById(R.id.welcome_driver_btn);
+        editTextMobile = findViewById(R.id.editTextMobile);
 
-        WelcomeCustomButton.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.buttonContinue).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent  LoginRegisterCusTomerIntent = new Intent(WelcomeActivity.this, CustomerLoginregiterActivity.class);
-                startActivity(LoginRegisterCusTomerIntent);
-            }
-        });
+            public void onClick(View v) {
 
-        WelcomeDriverButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent  LoginRegisterDriverIntent = new Intent(WelcomeActivity.this, DriverLoginResgisterActivity.class);
-                startActivity(LoginRegisterDriverIntent);
+                String mobile = editTextMobile.getText().toString().trim();
+
+                if(mobile.isEmpty() || mobile.length() < 10){
+                    editTextMobile.setError("Enter a valid mobile");
+                    editTextMobile.requestFocus();
+                    return;
+                }
+
+                Intent intent = new Intent(WelcomeActivity.this, VerifyPhoneActivity.class);
+                intent.putExtra("mobile", mobile);
+                startActivity(intent);
             }
         });
     }
